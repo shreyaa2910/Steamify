@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="series.html">Series</a></li>
+        </ul>
+    </nav>
+
+    <!-- Movies Section -->
+    <section class="movies">
+        <h2>Explore Popular Movies</h2>
+        <div class="movies-container">
+            <!-- Dynamic content will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script for Dynamic Movies Content -->
+    <script>
+        // Array of Movies Data
+        const movies = [
+            {
+                title: "Inception",
+                image: "C:/Users/Asus/Downloads/inception_2010_imax_original_film_art_2000x.jpg",
+                description: "A mind-bending thriller directed by Christopher Nolan."
+            },
+            {
+                title: "Interstellar",
+                image: "C:/Users/Asus/Downloads/OIP.jpg",
+                description: "Explore the cosmos in this epic sci-fi adventure."
+            },
+            {
+                title: "Avengers",
+                image: "C:/Users/Asus/Downloads/OIP (1).jpg",
+                description: "Earth's mightiest heroes unite to save the world."
+            }
+        ];
+
+        // Populate the Movies Section Dynamically
+        const container = document.querySelector('.movies-container');
+        movies.forEach(movie => {
+            const card = document.createElement('div');
+            card.className = 'movie-card';
+            card.innerHTML = `
+                <img src="${movie.image}" alt="${movie.title}">
+                <h3>${movie.title}</h3>
+                <p>${movie.description}</p>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
